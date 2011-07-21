@@ -60,5 +60,6 @@ Socialer::Application.routes.draw do
   root :to => "sign_up#index"
 
   resources :sign_up
+  resources :users
 
 end
