@@ -1,0 +1,17 @@
+<%= flash[:notice] %>
+
+<%= form_for :user, @user, :url => { :action => "create" } do |f| %>
+  <%= f.label :first_name %>:
+  <%= f.text_field :first_name %><br />
+
+  <%= f.label :last_name %>:
+  <%= f.text_field :last_name %><br />
+
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br />
+
+  <%= f.label :city %>:
+  <%= f.text_field :city %><br />
+
+  <%= submit_tag "Create" %>
+<% end %>
