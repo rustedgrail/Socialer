@@ -1,6 +1,6 @@
 <%= flash[:notice] %>
 
-<%= form_for :user, @user, :url => { :action => "create" } do |f| %>
+<%= form_for @user, as: "user", url: { :action => "create" } do |f| %>
   <%= f.label :first_name %>:
   <%= f.text_field :first_name %><br />
 

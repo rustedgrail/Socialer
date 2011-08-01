@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class MessageTest < ActionMailer::TestCase
-  # replace this with your real tests
-  test "the truth" do
-    assert true
+
+  test "a message is sent" do
+    message = Message.send_message users(:one), "My Message!"
+    message.deliver
+
+    assert !ActionMailer::Base.deliveries.empty?
   end
+
 end
