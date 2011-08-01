@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.all
+    @cities = User.all.group_by(&:city)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -30,6 +31,15 @@ class UsersController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @user }
     end
+  end
+
+  def send_email
+    @city = params[:city]
+    @message = params[:message]
+    @users = User.find_all_by_city @city
+
+    @users.each { |user| Message.send_message user, params[:message] }
+    flash[:notice] = "Success?"
   end
 
   # GET /users/1/edit

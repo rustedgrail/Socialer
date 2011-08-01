@@ -62,4 +62,6 @@ Socialer::Application.routes.draw do
   resources :sign_up
   resources :users
 
+  post "users/send_email"
+
 end

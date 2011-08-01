@@ -23,3 +23,7 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+
+<%= text_field :message, :send_message %>
+<%= select "user", "city", User.all.collect{ |user| user.city }.uniq %>
+<%= button_to "Send Email", action: "send_email", city: "Not Entered", message: "Not Entered"  %>
