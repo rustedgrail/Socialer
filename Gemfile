@@ -32,4 +32,5 @@ group :development, :test do
 #   gem 'webrat'
     gem 'capybara'
     gem 'metrical'
+    gem 'simplecov', '>= 0.4.0', :require => false
 end
